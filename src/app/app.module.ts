@@ -10,7 +10,7 @@ import {AppComponent} from './app.component';
 import {routing} from './app.routing';
 
 import {JwtInterceptor, ErrorInterceptor} from './_helpers';
-import {HomeComponent} from './home';
+import {TicketComponent} from './ticket';
 import {LoginComponent} from './login';
 
 @NgModule({
@@ -22,7 +22,7 @@ import {LoginComponent} from './login';
     ],
     declarations: [
         AppComponent,
-        HomeComponent,
+        TicketComponent,
         LoginComponent
     ],
     providers: [
