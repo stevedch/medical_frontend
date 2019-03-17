@@ -35,7 +35,6 @@ export class AuthenticationService {
         return this.http.post<any>(`${config.apiUrl}/auth/login/`, body, options).pipe(
             map((response: Response) => {
                     const user: User = response['data'];
-
                     if (user && user.token) {
                         // store user details and jwt token in local storage to keep user logged in between page refreshes
                         localStorage.setItem('currentUser', JSON.stringify(user));
