@@ -5,4 +5,7 @@
     firstName: string;
     lastName: string;
     token?: string;
+    avatar: string;
+    role: string;
+    email: string;
 }

@@ -34,7 +34,15 @@ export class AuthenticationService {
 
         return this.http.post<any>(`${config.apiUrl}/auth/login/`, body, options).pipe(
             map((response: Response) => {
-                    const user: User = response['data'];
+                    const data = response['data'];
+                    const user = new User();
+
+                    user.username = data['username'];
+                    user.avatar = data['avatar'];
+                    user.role = data['role'];
+                    user.email = data['email'];
+                    user.token = data['token'];
+
                     if (user && user.token) {
                         // store user details and jwt token in local storage to keep user logged in between page refreshes
                         localStorage.setItem('currentUser', JSON.stringify(user));
@@ -46,7 +54,6 @@ export class AuthenticationService {
     }
 
     logout() {
-        // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
         this.currentUserSubject.next(null);
     }
