@@ -1,6 +1,6 @@
-﻿import {Routes, RouterModule} from '@angular/router';
+﻿import {RouterModule, Routes} from '@angular/router';
 
-import {TicketComponent} from './ticket';
+import {TicketComponent, TicketCreateComponent} from './ticket';
 import {LoginComponent} from './login';
 import {AuthGuard} from './_guards';
 
@@ -8,6 +8,10 @@ const appRoutes: Routes = [
     {
         path: '',
         component: TicketComponent,
+        canActivate: [AuthGuard]
+    }, {
+        path: 'ticket/create',
+        component: TicketCreateComponent,
         canActivate: [AuthGuard]
     },
     {

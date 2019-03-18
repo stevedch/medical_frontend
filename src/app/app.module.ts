@@ -1,17 +1,16 @@
 ﻿import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
-
-// used to create fake backend
-// import { fakeBackendProvider } from './_helpers';
-
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AppComponent} from './app.component';
 import {routing} from './app.routing';
 
-import {JwtInterceptor, ErrorInterceptor} from './_helpers';
-import {TicketComponent} from './ticket';
+import {ErrorInterceptor, JwtInterceptor} from './_helpers';
+import {TicketComponent, TicketCreateComponent} from './ticket';
 import {LoginComponent} from './login';
+
+// used to create fake backend
+// import { fakeBackendProvider } from './_helpers';
 
 @NgModule({
     imports: [
@@ -23,6 +22,7 @@ import {LoginComponent} from './login';
     declarations: [
         AppComponent,
         TicketComponent,
+        TicketCreateComponent,
         LoginComponent
     ],
     providers: [

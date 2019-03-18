@@ -2,7 +2,7 @@
     <h1 class="h2">Tickets</h1>
     <div class="btn-toolbar mb-2 mb-md-0" *ngIf="currentUser.role === 'administrator'">
         <div class="btn-group mr-2">
-            <button type="button" class="btn btn-sm btn-success">Nuevo</button>
+            <a  class="btn btn-sm btn-success" routerLink="/ticket/create">Nuevo</a>
         </div>
     </div>
 </div>

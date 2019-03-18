@@ -37,6 +37,7 @@ export class AuthenticationService {
                     const data = response['data'];
                     const user = new User();
 
+                    user.id = data['id'];
                     user.username = data['username'];
                     user.avatar = data['avatar'];
                     user.role = data['role'];
