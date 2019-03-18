@@ -2,7 +2,7 @@
 
 import {TicketComponent, TicketCreateComponent} from './ticket';
 import {LoginComponent} from './login';
-import {AuthGuard} from './_guards';
+import {AuthGuard, AuthTicketGuard} from './_guards';
 
 const appRoutes: Routes = [
     {
@@ -12,7 +12,7 @@ const appRoutes: Routes = [
     }, {
         path: 'ticket/create',
         component: TicketCreateComponent,
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard, AuthTicketGuard]
     },
     {
         path: 'login',

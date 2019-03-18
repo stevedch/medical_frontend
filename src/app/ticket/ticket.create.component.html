@@ -15,7 +15,7 @@
         <div class="form-label-group mt-4">
             <label for="description">Descripción</label>
             <textarea id="description" formControlName="description" class="form-control"
-                      [ngClass]="{ 'is-invalid': submitted && f.description.errors }">
+                      [ngClass]="{ 'is-invalid': submitted && f.description.errors }" maxlength="299">
 
             </textarea>
 
